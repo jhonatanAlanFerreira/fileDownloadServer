@@ -12,9 +12,11 @@ module.exports = {
 
          var fileContents = Buffer.from(file);
 
+         console.log(file)
+
          res.writeHead(200, {
             'Content-Disposition': 'attachment;',
-            'Content-Type': path.extname(file.originalname),
+            'Content-Type': 'txt',
             'Content-Length': fileContents.length
           });
 
