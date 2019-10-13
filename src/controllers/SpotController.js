@@ -9,7 +9,7 @@ module.exports = {
 
          let file = req.file.buffer;
 
-         var fileContents = Buffer.from(file, "binary");
+         var fileContents = Buffer.from(file);
 
          res.writeHead(200, {
             'Content-Type': 'application/txt',
@@ -18,6 +18,6 @@ module.exports = {
           });
 
 
-        res.end(fileContents);
+        res.end(fileContents, 'binary');
     }
 };
