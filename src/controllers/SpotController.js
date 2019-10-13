@@ -12,8 +12,7 @@ module.exports = {
          var fileContents = Buffer.from(file);
 
          res.writeHead(200, {
-            'Content-Type': 'application/txt',
-            'Content-Disposition': 'attachment; filename=image.txt',
+            'Content-Disposition': 'attachment;',
             'Content-Length': fileContents.length
           });
 
