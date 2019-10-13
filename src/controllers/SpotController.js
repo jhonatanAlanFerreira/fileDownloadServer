@@ -1,4 +1,3 @@
-let fs = require('fs');
 
 module.exports = {
     async store(req, res) {
@@ -10,16 +9,15 @@ module.exports = {
 
          let file = req.file.buffer;
 
-         var fileContents = Buffer.from(file, "base64");
+         var fileContents = Buffer.from(file, "binary");
 
          res.writeHead(200, {
-            'Content-Type': 'application/jpeg',
-            'Content-Disposition': 'attachment; filename=image.pdf',
+            'Content-Type': 'application/txt',
+            'Content-Disposition': 'attachment; filename=image.txt',
             'Content-Length': fileContents.length
           });
 
-        let file = fs.createWriteStream(fileContents);
 
-        res.pipe(file);
+        res.end(fileContents);
     }
 };
