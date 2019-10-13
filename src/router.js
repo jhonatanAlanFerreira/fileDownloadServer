@@ -10,4 +10,6 @@ let upload = multer(uploadConfig);
 routes.post('/sessions', SessionController.store);
 routes.post('/spots', upload.single('thumbnail'), SpotsController.store);
 
+routes.get('/', (req, res) => res.json({ res: 'Server Working!'}))
+
 module.exports = routes;
