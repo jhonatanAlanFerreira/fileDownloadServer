@@ -7,8 +7,6 @@ let uploadConfig = require('./config/upload');
 
 let upload = multer(uploadConfig);
 
-
-
 routes.post('/sessions', SessionController.store);
 routes.post('/spots', upload.single('thumbnail'), SpotsController.store);
 
