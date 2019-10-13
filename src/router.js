@@ -7,10 +7,7 @@ let uploadConfig = require('./config/upload');
 
 let upload = multer(uploadConfig);
 
-routes.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "locahost"); // update to match the domain you will make the request from
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  });
+
 
 routes.post('/sessions', SessionController.store);
 routes.post('/spots', upload.single('thumbnail'), SpotsController.store);
