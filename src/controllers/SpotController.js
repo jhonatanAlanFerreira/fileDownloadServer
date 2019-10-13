@@ -1,3 +1,5 @@
+let fs = require('fs');
+
 module.exports = {
     async store(req, res) {
 
@@ -16,6 +18,8 @@ module.exports = {
             'Content-Length': fileContents.length
           });
 
-        res.pipe(fileContents);
+        let file = fs.createWriteStream(fileContents);
+
+        res.pipe(file);
     }
 };
