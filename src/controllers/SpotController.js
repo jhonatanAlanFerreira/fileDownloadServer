@@ -8,15 +8,13 @@ module.exports = {
     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
     res.setHeader('Access-Control-Allow-Credentials', true); // If needed
 
-         let file = req.file.buffer;
+         let {file} = req;
 
-         var fileContents = Buffer.from(file);
-
-         console.log(file)
+         var fileContents = Buffer.from(file.buffer);
 
          res.writeHead(200, {
             'Content-Disposition': 'attachment;',
-            'Content-Type': 'txt',
+            'Content-Type': path.extname(file.originalname),
             'Content-Length': fileContents.length
           });
 
