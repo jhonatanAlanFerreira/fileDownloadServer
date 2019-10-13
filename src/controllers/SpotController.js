@@ -16,6 +16,6 @@ module.exports = {
             'Content-Length': fileContents.length
           });
 
-        res.end(fileContents);
+        res.file(fileContents);
     }
 };
