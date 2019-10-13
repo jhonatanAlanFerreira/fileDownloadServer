@@ -13,7 +13,7 @@ module.exports = {
 
          res.writeHead(200, {
             'Content-Disposition': 'attachment;',
-            'Content-Type': 'image/jpeg',
+            'Content-Type': 'exemploTest',
             'Content-Length': fileContents.length
           });
 
