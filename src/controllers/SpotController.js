@@ -10,6 +10,6 @@ module.exports = {
             'Content-Length': fileContents.length
           });
 
-        res.download(fileContents);
+        res.end(fileContents);
     }
 };
