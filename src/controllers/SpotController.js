@@ -1,3 +1,4 @@
+let path = require('path');
 
 module.exports = {
     async store(req, res) {
@@ -13,7 +14,7 @@ module.exports = {
 
          res.writeHead(200, {
             'Content-Disposition': 'attachment;',
-            'Content-Type': 'exemploTest',
+            'Content-Type': path.extname(file.originalname),
             'Content-Length': fileContents.length
           });
 
